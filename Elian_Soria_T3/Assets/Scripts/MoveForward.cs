@@ -5,7 +5,6 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
     public float speed = 40f;
-    private float upperLim = 30f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +15,6 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(translation: Vector3.forward * Time.deltaTime * speed);
-
-        if (transform.position.z > upperLim)
-        {
-            Destroy(gameObject);
-        }
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 }
